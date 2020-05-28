@@ -54,7 +54,7 @@
 <p>增加HTTP头字段：x-access-token，值是之前获取的token</p>
 <p>增加正文内容：{"avatar_base_64_str" : "base64的串"}</p>
 
-<p>可以使用http://tool.chinaz.com/tools/imgtobase/获取图片base64的串，要去掉文件头 ”data:image/png;base64,“</p>
+<p>可以使用 http://tool.chinaz.com/tools/imgtobase/ 获取图片base64的串，要去掉文件头 ”data:image/png;base64,“</p>
 </li>
 </ul>
 
