@@ -65,5 +65,4 @@
 </ul>
 
 <h3>图片上传的活动图</h3>
-<img src="http://sunlingfeng.0431zy.com/%E6%B3%B3%E9%81%93%E6%B4%BB%E5%8A%A8%E5%9B%BE.jpg
-"/>
+<img src="http://sunlingfeng.0431zy.com/hdtyd.jpg" width="100%"/>
