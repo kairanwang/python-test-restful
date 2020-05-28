@@ -4,6 +4,8 @@ from functools import wraps
 import jwt
 from flask import jsonify, request, make_response
 from werkzeug.security import generate_password_hash, check_password_hash
+
+import alioss
 from model import User, db, api
 from user import user_api
 
@@ -20,7 +22,7 @@ def token_required(f):
             return jsonify({'message': 'Token is missing!'}), 401
 
         try:
-            data = jwt.decode(token, user_api.config['SECRET_KEY'])
+            data = jwt.decode(token, api.config['SECRET_KEY'])
             current_user = User.query.filter_by(public_id=data['public_id']).first()
         except:
             return jsonify({'message': 'Token is invalid!'}), 401
@@ -108,6 +110,27 @@ def delete_user(current_user, public_id):
     db.session.commit()
 
     return jsonify({'message': 'The user has been deleted!'})
+
+
+@user_api.route('/change_avatar/<public_id>', methods=['PUT'])
+@token_required
+def change_avatar(current_user, public_id):
+    if not current_user.admin:
+        return jsonify({'message': 'Cannot perform that function!'})
+
+    user = User.query.filter_by(public_id=public_id).first()
+
+    if not user:
+        return jsonify({'message': 'No user found!'})
+
+    data = request.get_json()
+
+    avatar_base_64_str = data['avatar_base_64_str']
+
+    avatar_url = alioss.uploadBase64(avatar_base_64_str)
+    user.avatar = avatar_url
+    db.session.commit()
+    return jsonify({'message': 'The user has been promoted!'})
 
 
 @user_api.route('/login')
