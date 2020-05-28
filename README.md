@@ -57,9 +57,11 @@
 <ul>
 <li>通过Ali提供的接口上传静态文件并获得访问地址
 <p>http://127.0.0.1:5000/user/change_avatar/public_id</p>
+<p>public_id：使用获取所有用户接口获得</p>
 <p>增加HTTP头字段：Content-Type: application/json</p>
 <p>增加HTTP头字段：x-access-token，值是之前获取的token</p>
 <p>增加正文内容：{"avatar_base_64_str" : "base64的串"}</p>
+
 <p>可以使用http://tool.chinaz.com/tools/imgtobase/获取图片base64的串，要去掉文件头 ”data:image/png;base64,“</p>
 </li>
 </ul>
