@@ -14,10 +14,7 @@
 
 <h3>安装</h3>
 <ul>
-<li>Python语法</li>
-<li>使用flask搭建web环境</li>
-<li>使用Blueprint进行模块化处理</li>
-<li>使用阿里云服务的oss进行静态文件管理</li>
+
 </ul>
 
 <h3>工具的选择</h3>
