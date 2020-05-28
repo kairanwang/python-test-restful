@@ -3,11 +3,11 @@ import uuid
 import oss2
 import os
 
-myAccessKeyId = 'LTAI4GK13jH25e6fTAudS4Hj'
-myAccessKeySecret = 'cbxYaYCx9icIo23AUSayeNBrV72uFg'
-EndPoint = 'oss-cn-qingdao.aliyuncs.com'
-myBucketName = 'sunlingfeng'
-myBucketUrl = 'http://sunlingfeng.0431zy.com/'
+myAccessKeyId = ''
+myAccessKeySecret = ''
+EndPoint = ''
+myBucketName = ''
+myBucketUrl = ''
 
 
 def upload(filename: object, cloud_name: object) -> object:
